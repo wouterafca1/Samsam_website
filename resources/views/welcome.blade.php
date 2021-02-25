@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>SaMSam Rooster</title>
+        <title>SaMSam Rooster!!!!!!!!!!!!!!!!</title>
 
         <!-- Styles -->
         <style>
