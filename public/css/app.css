@@ -2678,8 +2678,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #0D42CC;
+  border-color: #0D42CC;
 }
 
 .btn-primary:hover {
@@ -4870,7 +4870,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  color: white;
 }
 
 .navbar-light .navbar-brand:hover,
@@ -4879,7 +4879,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -4899,8 +4899,8 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-toggler {
-  color: rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border-color: white;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -7085,7 +7085,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #fff !important;
+  background-color: #0D42CC !important;
 }
 
 .bg-transparent {
