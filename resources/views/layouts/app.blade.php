@@ -25,7 +25,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div class="logo-image">
-                        <img src="{{asset('/images/samsam-logo-WIT.png')}}"  class="photo" width="75" height="75" data-toggle="modal">
+                        <img src="{{asset('/images/samsam-logo-WIT.png')}}"  class="photo" width="100" height="60" data-toggle="modal">
                     </div>
                 </a>
                 <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
