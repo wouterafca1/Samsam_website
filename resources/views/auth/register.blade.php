@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(Auth::user()->functie == "Werkgever")
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -85,4 +86,8 @@
             </div>
         </div>
     </div>
+    @else
+        {{ redirect(view('home')) }}
+    @endif
 @endsection
+
