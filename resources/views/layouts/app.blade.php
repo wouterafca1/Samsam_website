@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <div class="logo-image">
                         <img src="{{asset('/images/samsam-logo-WIT.png')}}"  class="photo" width="100" height="60" data-toggle="modal">
                     </div>

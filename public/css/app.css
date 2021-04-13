@@ -5010,6 +5010,15 @@ input[type=button].btn-block {
   border-top: 0;
 }
 
+#welkom {
+    animation: cssAnimation 5s 0s forwards;
+    visibility: visible;
+}
+
+@keyframes cssAnimation {
+    to   { opacity: 0; }
+}
+
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
