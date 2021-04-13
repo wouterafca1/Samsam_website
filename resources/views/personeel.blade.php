@@ -6,13 +6,13 @@
             <div class="col-md-8">
                 <table class="Users">
                     <tbody>
-                    <thead>
+                    <thead class="top-list">
                     <th>Naam</th>
                     <th>Functie</th>
                     <th>E-mailadres</th>
                     </thead>
                     @foreach($users as $user)
-                        <tr>
+                        <tr class="list">
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->functie }}</td>
                             <td>{{ $user->email }}</td>
