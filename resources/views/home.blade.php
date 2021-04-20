@@ -18,6 +18,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="timetable">
+
+        <script>
+            var timetable = new Timetable();
+            timetable.setScope(10, 22);
+
+            timetable.addLocations(['Silent Disco', 'Werknemer', 'Len Room', 'Maas Room']);
+            timetable.addEvent('Ingepland', 'Werknemer', new Date(2021,4,20,17), new Date(2021,4,20,21));
+
+
+            var renderer = new Timetable.Renderer(timetable);
+            renderer.draw('.timetable');
+        </script>
+        </div>
     </div>
 </div>
 @endsection
