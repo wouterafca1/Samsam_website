@@ -16,9 +16,13 @@ class PersoneelController extends Controller
     }
 
     public function index(){
+        return view('personeel');
+    }
+
+    public function getUsers(){
         $users = DB::table('users')->get();
 
-        return view('personeel')->with(['users' => $users]);
+        return view('personeel', ['users' => $users]);
     }
 }
 

@@ -35,7 +35,7 @@
         </div>
         @if(Auth::user()->functie == "Werkgever")
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                <a href="{{ route('addevent') }}" class="ml-4 text-sm text-gray-700 underline">Rooster werknemer in</a>
+                <a href="{{ route('addevent') }}" class="ml-4 text-sm text-gray-700 underline">Werknemer inroosteren</a>
             </div>
         @else
 
