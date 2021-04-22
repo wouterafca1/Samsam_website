@@ -33,4 +33,4 @@ Auth::routes();
 
 Route::get('/personeel', [App\Http\Controllers\PersoneelController::class, 'index'])->name('personeel');
 
-Route::get('/addevent',[App\Http\Controllers\AddEventController::class, 'index'])->name('addevent');
+Route::get('/addevent',[App\Http\Controllers\AddEventController::class, 'GetMedewerker'])->name('addevent');

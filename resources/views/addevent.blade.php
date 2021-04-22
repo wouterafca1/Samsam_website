@@ -20,7 +20,11 @@
                                 </td>
 
                                 <td class="list">
-                                    <input id="Naam" type="text" placeholder="Naam">
+                                    <select name="naam" id="name">
+                                        @foreach($werknemers as $werknemer)
+                                        <option value="werknemer_1">{{ $werknemer->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </td>
 
                                 <td class="list">

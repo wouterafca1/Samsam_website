@@ -18,5 +18,11 @@ class AddEventController extends Controller
     public function index(){
         return view('addevent');
     }
+
+    public function GetMedewerker(){
+        $werknemers = DB::table('users')->get();
+
+        return view('addevent', ['werknemers' => $werknemers]);
+    }
 }
 
