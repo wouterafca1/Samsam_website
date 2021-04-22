@@ -32,3 +32,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/personeel', [App\Http\Controllers\PersoneelController::class, 'index'])->name('personeel');
+
+Route::get('/addevent',[App\Http\Controllers\AddEventController::class, 'index'])->name('addevent');
