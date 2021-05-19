@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/samsam.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/kalender.css') }}" rel="stylesheet">
     <link href="{{ asset('css/timetablejs.css') }}" rel="stylesheet">
 
 </head>

@@ -1,45 +1,105 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+
+    date_default_timezone_set('Europe/Amsterdam');
+
+    // Get prev & next month
+    if (isset($_GET['ym'])) {
+        $ym = $_GET['ym'];
+    } else {
+        // This month
+        $ym = date('Y-m');
+    }
+
+    // Check format
+    $timestamp = strtotime($ym . '-01');  // the first day of the month
+    if ($timestamp === false) {
+        $ym = date('Y-m');
+        $timestamp = strtotime($ym . '-01');
+    }
+
+    $today = date('Y-m-j');
+
+    $title = date('F, Y', $timestamp);
+
+    // Create prev & next month link
+    $prev = date('Y-m', strtotime('-1 month', $timestamp));
+    $next = date('Y-m', strtotime('+1 month', $timestamp));
+
+    // Number of days in the month
+    $day_count = date('t', $timestamp);
+
+    // 1:Mon 2:Tue 3: Wed ... 7:Sun
+    $str = date('N', $timestamp);
+
+    // Array for calendar
+    $weeks = [];
+    $week = '';
+
+    // Add empty cell(s)
+    $week .= str_repeat('<td></td>', $str - 1);
+
+    for ($day = 1; $day <= $day_count; $day++, $str++) {
+
+        $date = $ym . '-' . $day;
+
+        if ($today == $date) {
+            $week .= '<td class="today">';
+        } else {
+            $week .= '<td>';
+        }
+        $week .= $day . '</td>';
+
+        // Sunday OR last day of the month
+        if ($str % 7 == 0 || $day == $day_count) {
+
+            // last day of the month
+            if ($day == $day_count && $str % 7 != 0) {
+                // Add empty cell(s)
+                $week .= str_repeat('<td></td>', 7 - $str % 7);
+            }
+
+            $weeks[] = '<tr>' . $week . '</tr>';
+
+            $week = '';
+        }
+    }
+?>
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card" id="welkom">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('U bent ingelogd!') }}
-                </div>
-            </div>
-        </div>
-
-        <div class="timetable">
-
-        <script>
-            var timetable = new Timetable();
-            timetable.setScope(10, 22);
-
-            timetable.addLocations(['Bilal', 'Dilek', 'Wouter', 'Bram']);
-            timetable.addEvent('Ingepland', 'Wouter', new Date(2021,4,20,17), new Date(2021,4,20,21));
-
-
-            var renderer = new Timetable.Renderer(timetable);
-            renderer.draw('.timetable');
-        </script>
-        </div>
-        @if(Auth::user()->functie == "Werkgever")
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                <a href="{{ route('addevent') }}" class="ml-4 text-sm text-gray-700 underline">Werknemer inroosteren</a>
-            </div>
-        @else
-
-        @endif
+    <div class="container">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="?ym=<?= $prev; ?>" class="btn btn-link">&lt; Vorige</a></li>
+            <li class="list-inline-item"><span class="title"><?= $title; ?></span></li>
+            <li class="list-inline-item"><a href="?ym=<?= $next; ?>" class="btn btn-link">Volgende &gt;</a></li>
+        </ul>
+        <p class="text-right"><a href="/home">Vandaag</a></p>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Maandag</th>
+                <th>Dinsdag</th>
+                <th>Woensdag</th>
+                <th>Donderdag</th>
+                <th>Vrijdag</th>
+                <th>Zaterdag</th>
+                <th>Zondag</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($weeks as $week) {
+                echo $week;
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
+
+
+
+
 </div>
 @endsection
