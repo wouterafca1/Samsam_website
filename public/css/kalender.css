@@ -17,10 +17,10 @@ th.dag {
 td.nummer {
     height: 100px;
 }
-th.dag:nth-of-type(1), td.nummer:nth-of-type(1) {
+th.dag:nth-of-type(2), td.nummer:nth-of-type(2) {
     color: red;
 }
-th.dag:nth-of-type(6), td.nummer:nth-of-type(6),th.dag:nth-of-type(7), td.nummer:nth-of-type(7) {
+th.dag:nth-of-type(8),th.dag:nth-of-type(7) {
     color: #0D42CC;
 }
 .today {
