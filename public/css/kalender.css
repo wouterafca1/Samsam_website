@@ -11,16 +11,16 @@
     font-weight: bold;
     font-size: 26px;
 }
-th {
+th.dag {
     text-align: center;
 }
-td {
+td.nummer {
     height: 100px;
 }
-th:nth-of-type(1), td:nth-of-type(1) {
+th.dag:nth-of-type(1), td.nummer:nth-of-type(1) {
     color: red;
 }
-th:nth-of-type(6), td:nth-of-type(6),th:nth-of-type(7), td:nth-of-type(7) {
+th.dag:nth-of-type(6), td.nummer:nth-of-type(6),th.dag:nth-of-type(7), td.nummer:nth-of-type(7) {
     color: #0D42CC;
 }
 .today {

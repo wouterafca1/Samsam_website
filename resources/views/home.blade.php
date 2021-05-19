@@ -48,7 +48,7 @@
         if ($today == $date) {
             $week .= '<td class="today">';
         } else {
-            $week .= '<td>';
+            $week .= '<td class="nummer">';
         }
         $week .= $day . '</td>';
 
@@ -79,13 +79,13 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Maandag</th>
-                <th>Dinsdag</th>
-                <th>Woensdag</th>
-                <th>Donderdag</th>
-                <th>Vrijdag</th>
-                <th>Zaterdag</th>
-                <th>Zondag</th>
+                <th class="dag">Maandag</th>
+                <th class="dag">Dinsdag</th>
+                <th class="dag">Woensdag</th>
+                <th class="dag">Donderdag</th>
+                <th class="dag">Vrijdag</th>
+                <th class="dag">Zaterdag</th>
+                <th class="dag">Zondag</th>
             </tr>
             </thead>
             <tbody>
