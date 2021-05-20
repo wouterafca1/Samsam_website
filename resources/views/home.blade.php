@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="container">
+
+
     <div id="sidemenu" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">About</a>
@@ -20,6 +22,9 @@
             document.getElementById("sidemenu").style.width = "0";
         }
     </script>
+
+
+
     <?php
     $dt = new DateTime;
     if (isset($_GET['year']) && isset($_GET['week'])) {
@@ -29,15 +34,20 @@
     }
     $year = $dt->format('o');
     $week = $dt->format('W');
+
     ?>
 
-    <a href="<?php echo $_SERVER['PHP_SELF'].'?week='.($week-1).'&year='.$year; ?>">Pre Week</a> <!--Previous week-->
-    <a href="<?php echo $_SERVER['PHP_SELF'].'?week='.($week+1).'&year='.$year; ?>">Next Week</a> <!--Next week-->
+
+
+
+
 
     <table>
         <tr class="list">
 
-            <th class="week">Week: <?php echo $week; ?>  </th>
+        <th class="week" ><a  href="<?php echo $_SERVER['PHP_SELF'].'?week='.($week-1).'&year='.$year; ?>"><</a>Week: <?php echo $week; ?>
+            <a href="<?php echo $_SERVER['PHP_SELF'].'?week='.($week+1).'&year='.$year; ?>">></a></th>
+
             <?php
             do {
                 echo "<th class='dag'>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
