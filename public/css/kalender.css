@@ -27,6 +27,7 @@ th.dag:nth-of-type(8),th.dag:nth-of-type(7) {
 }
 
 th.week {
+    font-size: 15pt;
     border: 2px solid black;
     padding-left: 10px;
 }
@@ -46,7 +47,7 @@ td.content {
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
@@ -69,13 +70,13 @@ td.content {
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 300px;
     font-size: 36px;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.week {
-    margin-left: 2vw;
+th.week {
+    padding: 2vw;
 }
 
 @media screen and (max-height: 450px) {
