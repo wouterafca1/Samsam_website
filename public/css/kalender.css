@@ -35,6 +35,12 @@ th.week {
 td.naam {
     border: 2px solid black;
     padding-left: 10px;
+    cursor: pointer;
+}
+
+td.naam:hover {
+    font-weight: bold;
+
 }
 
 td.content {
