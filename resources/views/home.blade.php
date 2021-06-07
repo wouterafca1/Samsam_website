@@ -59,6 +59,8 @@
         }
         $year = $dt->format('o');
         $week = $dt->format('W');
+        $today = date('d M Y');
+        $dateweek = date('W');
 
         ?>
 
@@ -69,12 +71,19 @@
                 <th class="week"><a
                         href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($week - 1) . '&year=' . $year; ?>"><</a>
                     Week: <?php echo $week; ?>
-                    <a href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($week + 1) . '&year=' . $year; ?>">></a></th>
+                    <a href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($week + 1) . '&year=' . $year; ?>">></a> <br>
+                    <a href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($dateweek) . '&year=' . $year;?>">Vandaag</a>
+                </th>
 
                 <?php
                 do {
+                    if ($today === $dt->format('d M Y')) {
+                        echo "<th class='today'>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
+                        $dt->modify('+1 day');
+                    } else {
                     echo "<th class='dag'>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
                     $dt->modify('+1 day');
+                    }
                 } while ($week == $dt->format('W'));
                 ?>
             </tr>

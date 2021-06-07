@@ -11,6 +11,14 @@
     font-weight: bold;
     font-size: 26px;
 }
+
+th.today {
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    color: orange;
+}
+
 th.dag {
     text-align: center;
     border: 2px solid black;
@@ -22,9 +30,11 @@ td.nummer {
 th.dag:nth-of-type(2), td.nummer:nth-of-type(2) {
     color: red;
 }
+
 th.dag:nth-of-type(8),th.dag:nth-of-type(7) {
     color: #0D42CC;
 }
+
 
 th.week {
     font-size: 15pt;
