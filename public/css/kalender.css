@@ -85,6 +85,22 @@ th.week {
     padding: 2vw;
 }
 
+.begintijd, .eindtijd {
+    margin-left: 15px;
+    padding-right: 20px;
+    padding-top: 15px;
+    color: white;
+}
+
+.eindtijd {
+    margin-left: 23px;
+}
+
+.inplannen {
+    margin-left: 30%;
+    margin-top: 20px;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
