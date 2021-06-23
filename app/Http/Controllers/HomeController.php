@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -32,5 +33,18 @@ class HomeController extends Controller
         $users = DB::table('users')->get();
 
         return view('home', ['users' => $users]);
+    }
+
+    public function Inplannen(Request $request) {
+
+        $tijden = new Home();
+
+        $tijden->starttime = $request['starttime'];
+        $tijden->endtime = $request['endtime'];
+        $tijden->naam = $request['name'];
+
+        $tijden->save();
+
+        return redirect('/home');
     }
 }

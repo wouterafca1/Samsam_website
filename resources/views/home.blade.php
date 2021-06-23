@@ -13,21 +13,23 @@
     <div class="container">
         @if(Auth()->user()->functie == "Werkgever")
             <div id="sidemenu" class="sidenav">
+                <form method="post" action=" {{url('home')}}">
                 <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#" id="username"></a>
-
-                <form method="POST" action=" {{ route('home') }}">
                     @csrf
                     <table>
                         <th>
-                    <tr><label class="begintijd">Begintijd:</label><input id="starttime" class="starttime" type="datetime-local"><br></tr>
-                    <tr><label class="eindtijd">Eindtijd:</label><input id="endtime" class="endtime" type="datetime-local"></tr>
+                            <tr><label class="begintijd">Begintijd:</label><input name="starttime" id="starttime" class="starttime"
+                                                                                  type="datetime-local"><br></tr>
+                            <tr><label class="eindtijd">Eindtijd:</label><input name="endtime" id="endtime" class="endtime"
+                                                                                type="datetime-local"></tr>
+
+                            <input type="hidden" name="name" id="name" value=""/>
+
                         </th>
                     </table>
                     <div class="inplannen">
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('Plan in') }}
-                        </button>
+                        <input type="submit" value="{{ __('Plan in') }}">
                     </div>
                 </form>
 
@@ -40,6 +42,7 @@
                 for (let i = 0; i < arr.length; i++) {
                     if (arr[i].id == userid) {
                         document.getElementById('username').innerHTML = arr[i].name;
+                        document.getElementById('name').value = arr[i].name;
                     }
                 }
             }
@@ -81,8 +84,8 @@
                         echo "<th class='today'>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
                         $dt->modify('+1 day');
                     } else {
-                    echo "<th class='dag'>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
-                    $dt->modify('+1 day');
+                        echo "<th class='dag'>" . $dt->format('l') . "<br>" . $dt->format('d M Y') . "</th>\n";
+                        $dt->modify('+1 day');
                     }
                 } while ($week == $dt->format('W'));
                 ?>

@@ -36,3 +36,5 @@ Auth::routes();
 Route::get('/personeel', [App\Http\Controllers\PersoneelController::class, 'getUsers'])->name('personeel');
 
 Route::get('/addevent',[App\Http\Controllers\AddEventController::class, 'GetMedewerker'])->name('addevent');
+
+Route::post('/home', [App\Http\Controllers\HomeController::class, 'Inplannen']);
