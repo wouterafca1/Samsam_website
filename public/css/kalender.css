@@ -39,7 +39,12 @@ th.dag:nth-of-type(8),th.dag:nth-of-type(7) {
 th.week {
     font-size: 15pt;
     border: 2px solid black;
-    padding-left: 10px;
+    padding: 2vw ;
+}
+
+.todaybutton {
+    font-size: 12pt;
+   margin-left: 25px;
 }
 
 td.naam {
@@ -89,10 +94,6 @@ td.content {
     right: 300px;
     font-size: 36px;
     margin-right: 50px;
-}
-
-th.week {
-    padding: 2vw;
 }
 
 .begintijd, .eindtijd {

@@ -71,11 +71,12 @@
         <table>
             <tr class="list">
 
-                <th class="week"><a
-                        href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($week - 1) . '&year=' . $year; ?>"><</a>
+                <th class="week">
+                    <a class="todaybutton" href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($dateweek) . '&year=' . $year;?>">Vandaag</a><br>
+                    <a href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($week - 1) . '&year=' . $year; ?>"><</a>
                     Week: <?php echo $week; ?>
                     <a href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($week + 1) . '&year=' . $year; ?>">></a> <br>
-                    <a href="<?php echo $_SERVER['PHP_SELF'] . '?week=' . ($dateweek) . '&year=' . $year;?>">Vandaag</a>
+
                 </th>
 
                 <?php
