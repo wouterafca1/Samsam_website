@@ -32,10 +32,13 @@ class HomeController extends Controller
     {
         $users = DB::table('users')->get();
 
-        return view('home', ['users' => $users]);
+        $homes = DB::table('homes')->get();
+
+        return view('home', ['users' => $users, 'homes' => $homes]);
     }
 
-    public function Inplannen(Request $request) {
+    public function Inplannen(Request $request)
+    {
 
         $tijden = new Home();
 
