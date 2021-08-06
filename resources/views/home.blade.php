@@ -94,14 +94,14 @@
             </tr>
             @foreach($users as $user)
                 <tr>
-                    <td class="naam" onclick="openNav({{ $user->id }})">{{ $user->name }} </td>
-                    @foreach($homes as $hour)
-                        <?php var_dump($hour->starttime, $dag);
-                        if ($hour->starttime != $dag) { ?>
-                            <td class="content"><?php echo $hour->starttime ?></td>
-                       <?php } ?>
-
-                    @endforeach
+                    <td class="naam" onclick="openNav({{ $user->id }})"> {{ $user->name }} </td>
+                    <td class="maandag"> - </td>
+                    <td class="dinsdag"> - </td>
+                    <td class="woensdag"> - </td>
+                    <td class="donderdag"> - </td>
+                    <td class="vrijdag"> - </td>
+                    <td class="zaterdag"> - </td>
+                    <td class="zondag"> - </td>
                 </tr>
             @endforeach
         </table>

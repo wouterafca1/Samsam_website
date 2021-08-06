@@ -38,3 +38,5 @@ Route::get('/personeel', [App\Http\Controllers\PersoneelController::class, 'getU
 Route::get('/addevent',[App\Http\Controllers\AddEventController::class, 'GetMedewerker'])->name('addevent');
 
 Route::post('/home', [App\Http\Controllers\HomeController::class, 'Inplannen']);
+
+Route::get('/gegevens', [App\Http\Controllers\GegevensController::class, 'index'])->name('gegevens');

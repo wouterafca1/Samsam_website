@@ -53,6 +53,10 @@ td.naam {
     cursor: pointer;
 }
 
+td.maandag, td.dinsdag, td.woensdag, td.donderdag, td.vrijdag, td.zaterdag, td.zondag {
+    border: 2px solid black;
+}
+
 td.naam:hover {
     font-weight: bold;
 
